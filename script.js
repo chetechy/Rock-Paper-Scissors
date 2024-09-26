@@ -1,3 +1,11 @@
+/*
+Project: Rock Paper Scissors Game
+Author: cheTechy
+created: 9/25/2024
+*/
+
+
+//getComputerChoice function randomly returns “rock”, “paper” or “scissors”
 function getComputerChoice(){
     let pcChoice = Math.floor(Math.random()* 3) + 1;
 
@@ -10,6 +18,7 @@ function getComputerChoice(){
     }  
 }
 
+//getHumanChoice function takes the user choice and returns it
 function getHumanChoice(){
     let huChoice = prompt('Choose P for Paper, S for Scissors, or R for Rock').toLowerCase();
 
@@ -25,7 +34,7 @@ function getHumanChoice(){
     }
 }
 
-
+//playRound function takes the human and computer player choices as arguments, plays a single round, increments the round winner’s score and logs a winner announcement.
 function playRound(huChoice, pcChoice){
 
     if (huChoice === pcChoice){
@@ -47,9 +56,11 @@ function playRound(huChoice, pcChoice){
 
 }
 
+//global score variables to keep track of the players score
 let humanScore = 0;
 let computerScore = 0;
 
+//playGame function calls playRound function to play 5 rounds, keeps track of the scores and declares a winner at the end.
 function playGame(){
 
     console.log('ROUND 1')
@@ -77,6 +88,7 @@ function playGame(){
     const computerSelection5 = getComputerChoice();
     playRound(humanSelection5, computerSelection5);
 
+    //Display final score message and 
     if (humanScore > computerScore){
         console.log('\nCongratulations, You Win! \n\nFinal Scores ' + '\n'+scores);
     }else if(computerScore > humanScore){
@@ -85,5 +97,5 @@ function playGame(){
         console.log('\nThis game is a Draw! \n\nFinal Scores ' + '\n'+scores);
     }
 }
-
+//playGame function call
 playGame();
