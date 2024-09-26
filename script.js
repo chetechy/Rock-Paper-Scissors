@@ -82,7 +82,7 @@ function playGame(){
     }else if(computerScore > humanScore){
         console.log('\nSorry, You Lose! Better luck next time.\n\nFinal Scores ' + '\n'+scores);
     }else{
-        console.log('\nThis game is Draw! \n\nFinal Scores ' + '\n'+scores);
+        console.log('\nThis game is a Draw! \n\nFinal Scores ' + '\n'+scores);
     }
 }
 
