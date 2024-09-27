@@ -2,7 +2,7 @@
 
 This game will be played entirely in the javascript console.
 
-### What is a javascript console?
+### What is the javascript console?
 A JavaScript console is a tool in web browsers. It lets you run and debug JavaScript code.
 ```
 Here's a quick guide on how to access the JavaScript console to view console output in various browsers:
