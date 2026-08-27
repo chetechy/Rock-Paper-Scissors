@@ -69,8 +69,8 @@ const drawScores = document.querySelector("#draw-score")
 const reset = document.querySelector("#reset-game")
 
 
-rock.addEventListener("click", () =>{
-    const playerChoice = getPlayerChoice("r");
+function handleChoice(input){
+    const playerChoice = getPlayerChoice(input);
     const aiChoice = getAIchoice();
     playerResult.innerHTML = `<img src="img/${playerChoice.toLowerCase()}.png" alt="${playerChoice}">
     <span>You</span>
@@ -82,34 +82,9 @@ rock.addEventListener("click", () =>{
     playerScores.textContent = `${playerScore}`;
     aiScores.textContent = `${aiScore}`;
     drawScores.textContent = `${drawScore}`;
+}
 
-});
-paper.addEventListener("click", () =>{
-    const playerChoice = getPlayerChoice("p");
-    const aiChoice = getAIchoice();
-    playerResult.innerHTML = `<img src="img/${playerChoice.toLowerCase()}.png" alt="${playerChoice}">
-    <span>You</span>
-    `;
-    aiResult.innerHTML = `<img src="img/${aiChoice.toLowerCase()}.png" alt="${aiChoice}">
-    <span>Computer</span>
-    `;
-    playRound(playerChoice, aiChoice)
-    playerScores.textContent = `${playerScore}`;
-    aiScores.textContent = `${aiScore}`;
-    drawScores.textContent = `${drawScore}`;
-});
-scissors.addEventListener("click", () =>{
-    const playerChoice = getPlayerChoice("s");
-    const aiChoice = getAIchoice();
-    playerResult.innerHTML = `<img src="img/${playerChoice.toLowerCase()}.png" alt="${playerChoice}">
-    <span>You</span>
-    `;
-    aiResult.innerHTML = `<img src="img/${aiChoice.toLowerCase()}.png" alt="${aiChoice}">
-    <span>Computer</span>
-    `;
-    playRound(playerChoice, aiChoice)
-    playerScores.textContent = `${playerScore}`;
-    aiScores.textContent = `${aiScore}`;
-    drawScores.textContent = `${drawScore}`;
-});
+rock.addEventListener("click", () => handleChoice("r"));
+paper.addEventListener("click", () => handleChoice("p"));
+scissors.addEventListener("click", () => handleChoice("s"));
 reset.addEventListener("click",resetGame);
